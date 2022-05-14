@@ -13,4 +13,4 @@ def findfile_path (fname, path, exts = None):
       for e in exts:
         if (d / fname + e).isfile ():
           return (d / fname + e).strip ()
-  raise ValueError ("No matching file found")
+  raise None
