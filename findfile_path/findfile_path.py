@@ -5,7 +5,7 @@ from path import Path
 
 @logtool.log_call
 def findfile_path (fname, path, exts = None):
-  if not isinstance (fname, list) or not isinstance (fname, set):
+  if not isinstance (fname, list) and not isinstance (fname, set):
     fnames = [fname,]
   for d in path:
     for f in fnames:
