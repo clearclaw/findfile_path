@@ -10,7 +10,7 @@ def findfile_path (fname, path, exts = None):
   for d in path:
     for f in fnames:
       d = Path (d).expanduser ()
-      if (d / f).isfile ():
+      if exts is None and (d / f).isfile ():
         return (d / f).strip ()
       if exts:
         for e in exts:
