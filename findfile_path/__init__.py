@@ -7,4 +7,3 @@ __version_info__ = get_versions ()
 del get_versions
 
 from .findfile_path import findfile_path
-

@@ -5,12 +5,15 @@ from path import Path
 
 @logtool.log_call
 def findfile_path (fname, path, exts = None):
+  if not isinstance (fname, list) or not isinstance (fname, set):
+    fnames = [fname,]
   for d in path:
-    d = Path (d).expanduser ()
-    if (d / fname).isfile ():
-      return (d / fname).strip ()
-    if exts:
-      for e in exts:
-        if (d / fname + e).isfile ():
-          return (d / fname + e).strip ()
-  raise None
+    for f in fnames:
+      d = Path (d).expanduser ()
+      if (d / f).isfile ():
+        return (d / f).strip ()
+      if exts:
+        for e in exts:
+          if (d / f + e).isfile ():
+            return (d / f + e).strip ()
+  return None
