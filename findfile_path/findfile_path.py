@@ -2,12 +2,11 @@
 
 import logtool
 from path import Path
+from collections.abc import Iterable
 
 @logtool.log_call
 def findfile_path (fname, path, exts = None):
-  if (not isinstance (fname, list)
-      and not isinstance (fname, set)
-      and not isinstance (fname, tuple)):
+  if not isinstance (fname, Iterable):
     fnames = [fname,]
   else:
     fnames = fname
