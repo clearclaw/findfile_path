@@ -8,9 +8,6 @@ possible file extensions.
 
   $ pip install findfile_path
 
-Usage
-=====
-
 ::
 
 findfile_path (fname, path, exts = None):
